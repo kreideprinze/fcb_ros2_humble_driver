@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>fcb_camera</name>
+  <version>0.1.0</version>
+  <description>
+    ROS 2 driver for the Sony FCB-EV9520L on a USB interface board (NeoHD or
+    Oppila): publishes the video and serves imaging-mode and zoom services.
+    The same camera handling as fcb_view.py, without the window.
+  </description>
+  <maintainer email="vikraant.rathore@gmail.com">Vikraant Rathore</maintainer>
+  <license>MIT</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>fcb_interfaces</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-serial</exec_depend>
+  <!-- H.264 for ~/image_raw/ffmpeg: PyAV encodes, the msgs package carries
+       it, and the transport plugin decodes it again for viewers and bags -->
+  <exec_depend>python3-av</exec_depend>
+  <exec_depend>ffmpeg_image_transport_msgs</exec_depend>
+  <exec_depend>ffmpeg_image_transport</exec_depend>
+  <exec_depend>image_transport</exec_depend>
+  <!-- devices.py asks v4l2-ctl which /dev/video node is the camera -->
+  <exec_depend>v4l-utils</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

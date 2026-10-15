@@ -1,0 +1,14 @@
+# Drive the lens to an exact optical magnification, 1.0 to 30.0.
+# Out-of-range requests are clamped; the response says what was adopted.
+float32 ratio
+# Block until the lens has arrived (or timeout_s passes) instead of
+# answering as soon as the target is accepted.
+bool wait
+float32 timeout_s
+---
+bool success
+string message
+# The target adopted, after clamping.
+float32 target_ratio
+# Where the lens was when the reply was sent.
+float32 ratio

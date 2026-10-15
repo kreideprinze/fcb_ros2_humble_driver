@@ -1,0 +1,15 @@
+# Switch the FCB-EV9520L's IR cut filter.
+#
+#   rgb      daylight colour, IR cut filter in        (also: day, color)
+#   ir       filter out, infrared-sensitive mono      (also: night, mono)
+#   rgb+ir   filter out, colour retained              (also: night_color)
+#   auto     the camera switches on scene brightness
+#
+# One sensor behind a removable filter, not a thermal camera: the mode
+# changes the one video stream from that moment on.
+string mode
+---
+bool success
+string message
+# The mode now in effect: rgb, ir, rgb+ir or auto.
+string mode
